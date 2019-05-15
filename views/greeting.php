@@ -1,7 +1,7 @@
 
 <div class="card bg-light mb-3" style="max-width: 18rem;" >
 
-<h1 class="card-header">Add to my journal</h1>
+<h2 class="card-header">Add to my journal</h2>
 
 <form action="?action=submit" method="POST" class="form-group card-body">
 
