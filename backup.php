@@ -80,26 +80,9 @@
           
         ]);
         
-          ?>
+        echo "The title is {$_POST['title']} and the content are {$_POST['content']}";
+        
 
-            <?php
-
-      }
-
-       if($_GET['action'] == 'logout') {
-
-        session_destroy();
-        header('Location: index.php');
-       }
-    }
-
-
-    // Check whether the user is logged in or not
-    // Show different views depending on the users login status
-    if(isset($_SESSION["loggedIn"])) {
-      echo "<h4>Welcome {$_SESSION['username']} To your journal.</h4>";
-
-     
           $query = "SELECT * FROM entries WHERE userID = {$_SESSION["userID"]}";
           $statement = $pdo->prepare($query); 
           $statement->execute();
@@ -132,8 +115,26 @@
             ?>
             </tbody>
             </table>
+            
+
+            <?php
+
+      }
+
+       if($_GET['action'] == 'logout') {
+
+        session_destroy();
+        header('Location: index.php');
+       }
+    }
+
+
+    // Check whether the user is logged in or not
+    // Show different views depending on the users login status
+    if(isset($_SESSION["loggedIn"])) {
+      echo "<h4>Welcome {$_SESSION['username']} To your journal.</h4>";
       
-      <?php
+      
       require 'views/greeting.php';
 
       
