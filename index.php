@@ -11,12 +11,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
   <link rel="stylesheet" href="style.css">  
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
-  <title>Login</title>
+
+  <title>My journal</title>
+
 </head>
+
 <body>
+
   <?php
     
     if(isset($_GET['action'])){
@@ -59,13 +62,13 @@
         
         
         if (password_verify($_POST['password'], $user["password"])) {
-          // Set our session to "loggedIn"
+          // Set session to "loggedIn"
           $_SESSION["loggedIn"] = true;
           $_SESSION['username'] = $user['username'];
           $_SESSION['userID'] = $user['userID'];
         } else {
+
           // Tell the user that the username and password was wrong
-          
           $message = "Wrong password.";
           echo "<script type='text/javascript'>alert('$message');</script>";
         }
@@ -100,11 +103,9 @@
 
 
     // Check whether the user is logged in or not
-    // Show different views depending on the users login status
-    if(isset($_SESSION["loggedIn"])) {
+      if(isset($_SESSION["loggedIn"])) {
       echo "<h4 id='welcome2'>Welcome {$_SESSION['username']} To your journal.</h4>";
 
-     
           $query = "SELECT * FROM entries WHERE userID = {$_SESSION["userID"]}";
           $statement = $pdo->prepare($query); 
           $statement->execute();
@@ -118,8 +119,7 @@
               <th scope="col"> Content</th>
               <th scope="col"> Created at</th>
           </tr>
-            
-           
+                     
           </thead>
           <tbody>
         
@@ -141,9 +141,10 @@
       
       <?php
       require 'views/greeting.php';
-
-      
+    
     }
+
+    
     else {
       echo "<h4 id='welcome1'>My Journal</h4>";
       require 'views/login.php';

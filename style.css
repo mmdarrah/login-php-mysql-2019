@@ -1,3 +1,5 @@
+
+/* General styles */
 body{
     font-family: 'Indie Flower', cursive;
     background-image: url("./images/bg1.jpg"); 
@@ -6,7 +8,7 @@ body{
     opacity: 0.9;
 }
 
-
+/* The login card style */
 .login{
      position: absolute;
      margin: auto;
@@ -16,6 +18,7 @@ body{
      
 }
 
+/* The registration card style */
 .register{
      position: absolute;
      margin: auto;
@@ -25,6 +28,7 @@ body{
      
 }
 
+/* The submit card style */
 .add{
      position: absolute;
      margin: auto;
@@ -34,6 +38,7 @@ body{
      
 }
 
+/* The submited tabel style */
 .added{
     position: absolute;
      margin: auto;
@@ -43,21 +48,25 @@ body{
      font-size: 1.6em;  
 }
 
+/* The hadlin of the login and registration page */
 #welcome1{
      text-align: center;
      font-size: 3.5em;
      margin-top: 50px;
 }
+
+/* The hadlin of the jurnal page */
 #welcome2{
      text-align: center;
      font-size: 2.5em;
      margin-top: 50px;
 }
 
+/* Logout button */
 #logout{
      position: absolute;
      margin: auto;
      top: 10px;
      right: 0;
-     /* left: 300px; */   
+      
 }
